@@ -32,3 +32,18 @@ function searchNumber() {
     }
 }
 
+function deleteNumber() {
+    const input = document.getElementById('numberInput').value;
+    if (input === "") {
+        document.getElementById('output').innerText = "Please enter a number.";
+        return;
+    }
+    const index = numbers.indexOf(input);
+    if (index !== -1) {
+        numbers.splice(index, 1); // Remove the number from the array
+        saveNumbers(); // Save updated array to localStorage
+        document.getElementById('output').innerText = `Number ${input} deleted.`;
+    } else {
+        document.getElementById('output').innerText = `Number ${input} not found in the list.`;
+    }
+}
