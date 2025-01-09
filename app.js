@@ -1,4 +1,3 @@
-
 let numbers = JSON.parse(localStorage.getItem('numbers')) || [];
 
 function saveNumbers() {
@@ -6,7 +5,7 @@ function saveNumbers() {
 }
 
 function addNumber() {
-    const input = document.getElementById('numberInput').value;
+    const input = document.getElementById('numberInput').value.trim();
     if (input === "") {
         document.getElementById('output').innerText = "Please enter a number.";
         return;
@@ -21,7 +20,7 @@ function addNumber() {
 }
 
 function searchNumber() {
-    const input = document.getElementById('numberInput').value;
+    const input = document.getElementById('numberInput').value.trim();
     if (input === "") {
         document.getElementById('output').innerText = "Please enter a number.";
         return;
@@ -34,7 +33,7 @@ function searchNumber() {
 }
 
 function deleteNumber() {
-    const input = document.getElementById('numberInput').value;
+    const input = document.getElementById('numberInput').value.trim();
     if (input === "") {
         document.getElementById('output').innerText = "Please enter a number.";
         return;
